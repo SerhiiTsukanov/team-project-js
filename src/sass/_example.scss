@@ -26,3 +26,139 @@
   background-size: cover;
   background-position: center;
 }
+
+
+.search-form {
+
+  background-color: rgb(156, 153, 148);
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  color: #ffffff;
+  text-align: center;
+  min-height: 40px;
+  padding: 10px;
+  border: solid 2px transparent;
+  background-color: rgb(238, 236, 132);
+  transition: background-color 1000ms, box-shadow 500ms ease;
+
+  &:focus {
+    z-index: 10;
+    box-shadow: 5px 5px 19px -1px #000000;
+    background-color: rgb(255, 255, 255);
+    color: rgb(16, 190, 30);
+    box-shadow: 5px 5px 15px -1px #ffffff;
+    outline: none;
+  }
+}
+
+.search-submit {
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 40px;
+  margin-left: 10px;
+  min-height: 40px;
+  border: solid 2px transparent;
+  border-radius: 5px;
+
+  border-left: 1px solid rgb(173, 171, 171);
+  background-color: rgb(133, 212, 68);
+  transition: background-color 1000ms, box-shadow 500ms ease;
+
+  &:focus,
+  &:hover {
+    background-color: rgb(255, 255, 255);
+    color: green;
+    box-shadow: 5px 5px 15px -1px #ffffff;
+
+  }
+}
+
+::-webkit-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: -5px;
+}
+
+.photo-card_link {
+  display: flex;
+  color: inherit;
+  flex-basis: calc((100% - 8 * 5px) / 4);
+  margin: 5px;
+}
+
+
+.photo-card {
+  position: relative;
+  padding: 5px;
+  width: 100%;
+  padding-bottom: 35px;
+  background-color: tomato;
+  box-shadow: 5px 5px 15px -1px #000000;
+  transition: background-color 1000ms, transform 500ms ease;
+
+  & img {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 19px -1px rgb(87, 163, 87);
+
+    // transform: rotate(-1deg) scale(1.01);
+  }
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc((100% - 10px) / 1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 5px;
+
+}
+
+.info-item,
+span {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  color: green;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  &>span {
+    margin-top: 5px;
+  }
+
+  &:focus,
+  &:hover {
+    color: rgb(236, 191, 44);
+  }
+}

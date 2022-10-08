@@ -1,34 +1,19 @@
-// 'use strict';
-
 import Notiflix from 'notiflix';
 import 'notiflix/dist/notiflix-3.2.5.min.css';
 import axios from 'axios';
 import getRefs from './get-refs';
-import renderMarkupImageInfo from './renderMarkup';
-// import LoadMoreBtn from './load-more-btn';
-// import fetchImages from './fetchImages';
-// import onSearch from './on-search';
-
+import renderMarkupImageInfo from './markup';
 
 
 const refs = getRefs();
 
-const API_KEY = '29400400-14e1219d1dcdc4068cdd8e581';
+const API_KEY = '30081282-1c3fc5ff0122a52a3b21ea25b';
 const BASE_URL = 'https://pixabay.com/api/';
 
 let perPage = 40;
 let totalHitsOfResponse;
 let totalPageOfResponse;
 let page = 1;
-
-// =====Доп кнопка========
-// const loadMoreBtn = new LoadMoreBtn({
-//   selector: '[data-action="load-more"]',
-//   hidden: true,
-// });
-
-// console.log(loadMoreBtn);
-// ===========================
 
 
 refs.searchForm.addEventListener('submit', onSearch );
@@ -37,9 +22,6 @@ refs.searchForm.addEventListener('submit', onSearch );
 window.addEventListener('scroll', addMore);
 // ==============================
 
-// =====Доп кнопка========
-// loadMoreBtn.refs.button.addEventListener('click', fetchAricles);
-// ==============================
 
 async function  onSearch (e) {
     e.preventDefault();
@@ -74,10 +56,6 @@ async function  onSearch (e) {
     }
 
 
-    // const fetch = fetchImages() 
-
-    // fetch;
-
     async function fetchImages() {
       const searchQuery = refs.searchInput.value;
       try {
@@ -100,5 +78,3 @@ async function  onSearch (e) {
         page += 1;
       }
     }
-
-
