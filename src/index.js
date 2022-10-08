@@ -21,7 +21,7 @@ let page = 1;
 refs.searchForm.addEventListener('submit', onSearch );
 
 // ======Бесконечный скролл======
-// window.addEventListener('scroll', addMore);
+window.addEventListener('scroll', addMore);
 // ==============================
 
 
@@ -74,12 +74,12 @@ async function  onSearch (e) {
       }
     }
 
-    // function addMore() {
-    //   if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-    //     fetchImages();
-    //     page += 1;
-    //   }
-    // }
+    function addMore() {
+      if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+        fetchImages();
+        page += 1;
+      }
+    }
 
     const options = {
   totalItems: 500,
